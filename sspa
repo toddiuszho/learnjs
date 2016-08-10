@@ -4,10 +4,12 @@ abspath="$(cd "${0%/*}" 2>/dev/null; echo "$PWD"/"${0##*/}")"
 root_dir=`dirname "$abspath"`
 app_name=learnjs
 code_bucket=${app_name}/_code_bundles
-profile=admin
+profile="zho-admin"
+PYTHON_EXEC="/usr/local/bin/python3"
+HTTP_MODULE="http.server"
 
 function check_python() {
-  if ! which python > /dev/null; then
+  if ! which $(basename "${PYTHON_EXEC}") > /dev/null; then
     echo "Can't find Python. You need Python 2.7 or later to use this."
     exit 1
   fi
@@ -33,7 +35,7 @@ function check_node_deps() {
 
 function dev_server() {
   cd public
-  exec python -m SimpleHTTPServer 9292
+  exec "${PYTHON_EXEC}" -m "${HTTP_MODULE}" 9292
 }
 
 function livereload_server() {
