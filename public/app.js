@@ -24,3 +24,7 @@ learnjs.showView = function(hash) {
     viewContainer.empty().append(viewFn(index));
   }
 }
+
+learnjs.appOnReady = function() {
+  learnjs.showView(window.location.hash);
+}
