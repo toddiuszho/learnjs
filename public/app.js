@@ -1,9 +1,9 @@
 'use strict';
 
-/*var hostname = location.hostname;
+var hostname = location.hostname;
 var ahostname = hostname.split('.');
 var env = ahostname[0];
-document.title = env + " " + location.pathname;*/
+document.title = env + " " + location.pathname;
 
 var learnjs = {};
 
