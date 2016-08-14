@@ -13,11 +13,14 @@ learnjs.problemView = function(problem) {
 
 learnjs.showView = function(hash) {
   var routes = {
-    '#problem-1': learnjs.problemView
+    '#problem': learnjs.problemView
   };
-  var viewFn = routes[hash];
+  var splits = hash.split('-');
+  var lookup = splits[0];
+  var index = splits[1];
+  var viewFn = routes[lookup];
   if (viewFn) {
     var viewContainer = $('.view-container');
-    viewContainer.empty().append(viewFn());
+    viewContainer.empty().append(viewFn(index));
   }
 }
