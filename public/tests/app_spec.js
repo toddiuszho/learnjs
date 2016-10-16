@@ -31,7 +31,7 @@ describe('LearnJS', function() {
   describe('problem view', function() {
     it('has a title that includes the problem number', function() {
       var view = learnjs.problemView('1');
-      expect(view.text().trim()).toEqual('Problem #1');
+      expect(view.find('.title').text().trim()).toEqual('Problem #1');
     });
   });
 });
